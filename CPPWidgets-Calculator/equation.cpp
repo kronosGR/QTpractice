@@ -78,9 +78,15 @@ QString Equation::toString()
     return display;
 }
 
-Equation::Action Equation::getAction() const {}
+Equation::Action Equation::getAction() const
+{
+    return m_action;
+}
 
-void Equation::setAction(const Action &action) {}
+void Equation::setAction(const Action &action)
+{
+    m_action = action;
+}
 
 QString Equation::getValue2() const
 {
