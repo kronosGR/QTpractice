@@ -2,6 +2,10 @@
 #define DIALOG_H
 
 #include <QDialog>
+#include <QGridLayout>
+#include <QMessageBox>
+#include <QPushButton>
+#include "equation.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,7 +21,24 @@ public:
     Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
+private slots:
+    void on_buttonBox_accepted();
+    void clear();
+    void add();
+    void subtract();
+    void multiply();
+    void divide();
+    void number();
+    void update();
+    void addEquation();
+
 private:
     Ui::Dialog *ui;
+
+    QList<Equation *> m_list;
+    void init();
+    Equation *getLast();
+    void updateValue(QString data);
+    void updateAction(Equation::Action value);
 };
 #endif // DIALOG_H
