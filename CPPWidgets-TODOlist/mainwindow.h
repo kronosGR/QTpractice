@@ -1,7 +1,15 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QCloseEvent>
+#include <QDataStream>
+#include <QDebug>
+#include <QFile>
+#include <QFileDialog>
+#include <QListWidget>
+#include <QListWidgetItem>
 #include <QMainWindow>
+#include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,7 +25,47 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_actionNew_triggered();
+
+    void on_actionSave_triggered();
+
+    void on_actionOpen_triggered();
+
+    void on_actionSave_As_triggered();
+
+    void on_actionExit_triggered();
+
+    void on_actionAdd_triggered();
+
+    void on_actionRemove_triggered();
+
+    void on_actionClear_triggered();
+
+    void on_actionSelect_All_triggered();
+
+    void on_actionSelect_None_triggered();
+
+    void on_actionChecked_triggered();
+
+    void on_actionUnchecked_triggered();
+
+    void on_actionPartially_triggered();
+
 private:
     Ui::MainWindow *ui;
+
+    QString m_filename;
+    bool m_changed;
+
+    void create();
+    void open(QString path);
+    void save(QString path);
+    void checkSave();
+    void createItem(Qt::CheckState state, QString name);
+
+    // QWidget interface
+protected:
+    void closeEvent(QCloseEvent *event);
 };
 #endif // MAINWINDOW_H
