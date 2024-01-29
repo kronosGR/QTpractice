@@ -1,7 +1,11 @@
 #ifndef DIALOG_H
 #define DIALOG_H
 
+#include <QDebug>
 #include <QDialog>
+#include <QPushButton>
+#include <QTime>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,7 +21,18 @@ public:
     Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
+private slots:
+    void on_buttonBox_accepted();
+
+    void timeout();
+    void start();
+    void stop();
+
 private:
     Ui::Dialog *ui;
+
+    QTimer m_timer;
+    QTime m_started;
+    QTime m_stopped;
 };
 #endif // DIALOG_H

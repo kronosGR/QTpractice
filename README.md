@@ -1,4 +1,4 @@
-# QTpractice
+# Qt Practice
 
 ## 1. Equation Calculator - [source code](https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-Calculator)
 
@@ -11,3 +11,7 @@
 ## 3. Simple Clipboard Manager - [source code](https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-SimpleClipboard)
 
 ![SCM](screenshotSimpleClipboard.png)
+
+## 4. Simple StopWatch - [source code](https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-SimpleStopWatch)
+
+![SSW](screenshotSimpleStopWatch.png)
