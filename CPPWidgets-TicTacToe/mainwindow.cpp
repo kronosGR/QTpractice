@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "QDebug"
+#include "configurationdialog.h"
 #include "tictactoewidget.h"
 
 #include <QMessageBox>
@@ -11,7 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    connect(ui->startNewGame, &QPushButton::clicked, this, &MainWindow::startNewGame);
+    connect(ui->startNewGame_2, &QAction::triggered, this, &MainWindow::startNewGame);
+    connect(ui->actionQuit, &QAction::triggered, qApp, &QApplication::quit);
     connect(ui->gameBoard,
             &TicTacToeWidget::currentPlayerChanged,
             this,
@@ -54,7 +56,11 @@ void MainWindow::handleGameOver(TicTacToeWidget::Player winner)
 
 void MainWindow::startNewGame()
 {
-    ui->player1Name->setText(tr("Kronos"));
-    ui->player2Name->setText(tr("Zeus"));
+    ConfigurationDialog dialog(this);
+    if (dialog.exec() == QDialog::Rejected) {
+        return;
+    }
+    ui->player1Name->setText(dialog.player1Name());
+    ui->player2Name->setText(dialog.player2Name());
     ui->gameBoard->initNewGame();
 }

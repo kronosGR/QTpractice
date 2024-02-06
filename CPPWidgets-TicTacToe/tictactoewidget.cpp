@@ -15,6 +15,7 @@ TicTacToeWidget::TicTacToeWidget(QWidget *parent)
     for (int row = 0; row < 3; ++row) {
         for (int col = 0; col < 3; ++col) {
             QPushButton *button = new QPushButton(" ");
+            button->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
             gridLayout->addWidget(button, row, col);
             m_board.append(button);
             connect(button, SIGNAL(clicked()), mapper, SLOT(map()));

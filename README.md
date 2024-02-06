@@ -15,3 +15,7 @@
 ## 4. Simple StopWatch - [source code](https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-SimpleStopWatch)
 
 ![SSW](screenshotSimpleStopWatch.png)
+
+## 5. TicTacToe (not completed) - [source code](https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-TicTacToe)
+
+![TTT](screenshotTictactoe.png)
