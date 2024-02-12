@@ -1,6 +1,6 @@
 # Qt Practice
 
-C++ | Qml
+[C++](#C++) | [Qml](#Qml)
 
 ## C++
 
@@ -26,4 +26,6 @@ C++ | Qml
 
 ## Qml
 
-### 1. Simple Square meter calculator -[]
+### 1. Simple Square meter calculator - [source code](https://github.com/kronosGR/QTpractice/tree/main/QMLsimpleSquareCalculator)
+
+![SSC](screenshotSquareCalculator.png)
