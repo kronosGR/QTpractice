@@ -6,13 +6,14 @@
 #include <QStyleOptionGraphicsItem>
 #include <QtMath>
 
-static const float MAX_X = 50;
-
-SineItem::SineItem() {}
+SineItem::SineItem()
+{
+    m_maxX = 50;
+}
 
 QRectF SineItem::boundingRect() const
 {
-    return QRectF(0, -1, MAX_X, 2);
+    return QRectF(0, -1, m_maxX, 2);
 }
 
 void SineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -24,7 +25,7 @@ void SineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
     QPen pen;
     pen.setCosmetic(true);
     painter->setPen(pen);
-    const int steps = qRound(MAX_X / dx);
+    const int steps = qRound(m_maxX / dx);
     QPointF previousPoint(0, sin(0));
     for (int i = 1; i < steps; ++i) {
         const float x = dx * i;
@@ -56,4 +57,18 @@ void SineItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
     } else {
         event->ignore();
     }
+}
+
+float SineItem::maxX() const
+{
+    return m_maxX;
+}
+
+void SineItem::setMaxX(float newMaxX)
+{
+    if (m_maxX == newMaxX)
+        return;
+
+    prepareGeometryChange();
+    m_maxX = newMaxX;
 }

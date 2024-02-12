@@ -14,8 +14,14 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
     // QGraphicsItem interface
+    float maxX() const;
+    void setMaxX(float newMaxX);
+
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+
+private:
+    float m_maxX;
 };
 
 #endif // SINEITEM_H
