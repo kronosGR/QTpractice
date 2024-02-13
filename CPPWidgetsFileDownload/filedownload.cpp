@@ -22,6 +22,11 @@ FileDownload::~FileDownload()
 
 void FileDownload::downloadFinished(QNetworkReply *reply)
 {
+    if (reply->error() != QNetworkReply::NoError) {
+        const QString error = reply->errorString();
+        ui->plainTextEdit->setPlainText(error);
+        return;
+    }
     const QByteArray content = reply->readAll();
     ui->plainTextEdit->setPlainText(QString::fromUtf8(content));
     reply->deleteLater();
