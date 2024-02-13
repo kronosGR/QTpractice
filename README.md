@@ -2,7 +2,7 @@
 
 [C++](#C++) | [Qml](#Qml)
 
-## C++
+## C++ [Top](#Qt-Practice)
 
 ### 1. Equation Calculator - [source code](https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-Calculator)
 
@@ -24,7 +24,7 @@
 
 ![TTT](screenshotTictactoe.png)
 
-## Qml
+## Qml [Top](#Qt-Practice)
 
 ### 1. Simple Square meter calculator - [source code](https://github.com/kronosGR/QTpractice/tree/main/QMLsimpleSquareCalculator)
 
