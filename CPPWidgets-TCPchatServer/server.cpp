@@ -22,11 +22,49 @@ void Server::close()
     QTcpServer::close();
 }
 
-void Server::disconnect() {}
+void Server::disconnected()
+{
+    QTcpSocket *socket = qobject_cast<QTcpSocket *>(sender());
+    if (!socket)
+        return;
 
-void Server::readyRead() {}
+    m_list.removeAll(socket);
 
-void Server::incomingConnection(qintptr handle) {}
+    disconnect(socket, &QTcpSocket::disconnected, this, &Server::disconnected);
+    disconnect(socket, &QTcpSocket::readyRead, this, &Server::readyRead);
+    socket->deleteLater();
+
+    emit changed();
+}
+
+void Server::readyRead()
+{
+    QTcpSocket *socket = qobject_cast<QTcpSocket *>(sender());
+    if (!socket)
+        return;
+
+    QByteArray data = socket->readAll();
+    foreach (QTcpSocket *socket, m_list) {
+        socket->write(data);
+    }
+}
+
+void Server::incomingConnection(qintptr handle)
+{
+    QTcpSocket *socket = new QTcpSocket();
+    socket->setSocketDescriptor(handle);
+    if (!socket->waitForConnected(3000)) {
+        delete socket;
+        return;
+    }
+
+    m_list.append(socket);
+    connect(socket, &QTcpSocket::disconnected, this, &Server::disconnected);
+    connect(socket, &QTcpSocket::readyRead, this, &Server::readyRead);
+
+    emit changed();
+    socket->write(m_message.toLatin1());
+}
 
 QString Server::message() const
 {

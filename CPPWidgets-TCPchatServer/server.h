@@ -22,7 +22,7 @@ signals:
     void changed();
 
 public slots:
-    void disconnect();
+    void disconnected();
     void readyRead();
 
     // QTcpServer interface
