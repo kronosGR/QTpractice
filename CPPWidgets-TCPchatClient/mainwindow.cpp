@@ -12,3 +12,9 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_btnConnect_clicked() {}
+
+void MainWindow::on_pushButtonDisconnect_clicked() {}
+
+void MainWindow::on_btnSend_clicked() {}
