@@ -12,3 +12,7 @@ Dialog::~Dialog()
 {
     delete ui;
 }
+
+void Dialog::on_btnScreen_clicked() {}
+
+void Dialog::on_btnSave_clicked() {}

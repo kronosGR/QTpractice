@@ -17,6 +17,11 @@ public:
     Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
+private slots:
+    void on_btnScreen_clicked();
+
+    void on_btnSave_clicked();
+
 private:
     Ui::Dialog *ui;
 };
