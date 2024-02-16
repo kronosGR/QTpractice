@@ -32,7 +32,26 @@ void Dialog::on_btnScreen_clicked()
     QTimer::singleShot(500, this, &Dialog::shoot);
 }
 
-void Dialog::on_btnSave_clicked() {}
+void Dialog::on_btnSave_clicked()
+{
+    QString path = QFileDialog::getSaveFileName(this, "Save", QString(), "PNG Image (*.png)");
+    if (path.isEmpty())
+        return;
+
+    QFileInfo fi(path);
+    if (fi.exists()) {
+        QMessageBox::StandardButton btn
+            = QMessageBox::question(this,
+                                    "Exists",
+                                    "File already exists would you like to overwrite it");
+        if (btn != QMessageBox::StandardButton::Yes)
+            return;
+    }
+
+    if (!m_image.save(path, "PNG")) {
+        QMessageBox::critical(this, "Error", "Could not save the image");
+    }
+}
 
 void Dialog::shoot()
 {

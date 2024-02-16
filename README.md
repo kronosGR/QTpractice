@@ -32,6 +32,10 @@
 
 ![STCC](screenshotClient.png)
 
+### 8. Simple Screen Capture(image) - [source] (https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-SimpleScreenCapture)
+
+![SSCI](screenshotSimpleScreenshot.png)
+
 ## Qml [Top](#Qt-Practice)
 
 ### 1. Simple Square meter calculator - [source code](https://github.com/kronosGR/QTpractice/tree/main/QMLsimpleSquareCalculator)
