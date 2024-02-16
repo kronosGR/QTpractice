@@ -30,7 +30,7 @@
 
 ### 7. Simple TCP Chat Client - [source](https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-TCPchatClient)
 
-1[STCC](screenshotClient.png)
+![STCC](screenshotClient.png)
 
 ## Qml [Top](#Qt-Practice)
 
