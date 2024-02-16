@@ -32,7 +32,7 @@
 
 ![STCC](screenshotClient.png)
 
-### 8. Simple Screen Capture(image) - [source] (https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-SimpleScreenCapture)
+### 8. Simple Screen Capture(image) - [source](https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-SimpleScreenCapture)
 
 ![SSCI](screenshotSimpleScreenshot.png)
 
