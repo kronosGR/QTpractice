@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>TCP Chat Client</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -53,7 +53,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButtonDisconnect">
+       <widget class="QPushButton" name="btnDisconnect">
         <property name="text">
          <string>Disconnect</string>
         </property>

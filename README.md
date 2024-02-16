@@ -24,6 +24,14 @@
 
 ![TTT](screenshotTictactoe.png)
 
+### 6. Simple TCP Chat Server - [source code](https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-TCPchatServer)
+
+![STCS](screenshotServer.png)
+
+### 7. Simple TCP Chat Client - [source](https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-TCPchatClient)
+
+1[STCC](screenshotClient.png)
+
 ## Qml [Top](#Qt-Practice)
 
 ### 1. Simple Square meter calculator - [source code](https://github.com/kronosGR/QTpractice/tree/main/QMLsimpleSquareCalculator)

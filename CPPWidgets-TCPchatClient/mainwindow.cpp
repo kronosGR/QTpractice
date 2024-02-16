@@ -6,6 +6,17 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    connect(&m_socket, &QTcpSocket::connected, this, &MainWindow::connected);
+    connect(&m_socket, &QTcpSocket::disconnected, this, &MainWindow::disconnected);
+    connect(&m_socket, &QTcpSocket::readyRead, this, &MainWindow::readyRead);
+    connect(&m_socket, QAbstractSocket::errorOccurred, this, &MainWindow::error);
+
+    ui->btnConnect->setEnabled(true);
+    ui->btnDisconnect->setEnabled(false);
+    ui->btnSend->setEnabled(false);
+    m_model.setStringList(m_list);
+    ui->listView->setModel(&m_model);
 }
 
 MainWindow::~MainWindow()
@@ -13,8 +24,83 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_btnConnect_clicked() {}
+void MainWindow::on_btnConnect_clicked()
+{
+    if (m_socket.isOpen())
+        m_socket.close();
 
-void MainWindow::on_pushButtonDisconnect_clicked() {}
+    m_name = QInputDialog::getText(this, "Name", "Your name?", QLineEdit::EchoMode::Normal, m_name);
 
-void MainWindow::on_btnSend_clicked() {}
+    bool ok;
+    quint16 port = static_cast<quint16>(ui->txtPort->text().toInt(&ok));
+
+    if (!ok) {
+        QMessageBox::critical(this, "Error", "Please enter a valid port number");
+        return;
+    }
+
+    m_socket.connectToHost(ui->txtServer->text(), port);
+
+    ui->btnConnect->setEnabled(false);
+    ui->btnDisconnect->setEnabled(true);
+    ui->btnSend->setEnabled(true);
+
+    if (!m_socket.waitForConnected(3000)) {
+        on_pushButtonDisconnect_clicked();
+        QMessageBox::critical(this, "Error", "Could not connect to server");
+        ui->btnConnect->setEnabled(true);
+        ui->btnDisconnect->setEnabled(false);
+        ui->btnSend->setEnabled(false);
+        return;
+    }
+}
+
+void MainWindow::on_pushButtonDisconnect_clicked()
+{
+    m_socket.close();
+    ui->btnConnect->setEnabled(true);
+    ui->btnDisconnect->setEnabled(false);
+    ui->btnSend->setEnabled(false);
+}
+
+void MainWindow::on_btnSend_clicked()
+{
+    if (!m_socket.isOpen())
+        return;
+
+    QByteArray data;
+    data.append(m_name.toLatin1());
+    data.append(QString(" ").toLatin1());
+    data.append(ui->txtMessage->text().toLatin1());
+    m_socket.write(data);
+    ui->txtMessage->setText(QString());
+}
+
+void MainWindow::connected()
+{
+    ui->btnConnect->setEnabled(false);
+    ui->btnDisconnect->setEnabled(true);
+    ui->btnSend->setEnabled(true);
+}
+
+void MainWindow::disconnected()
+{
+    ui->btnConnect->setEnabled(true);
+    ui->btnDisconnect->setEnabled(false);
+    ui->btnSend->setEnabled(false);
+}
+
+void MainWindow::readyRead()
+{
+    QByteArray data = m_socket.readAll();
+    QString message(data);
+    m_list.append(message);
+    m_model.setStringList(m_list);
+    ui->listView->scrollToBottom();
+}
+
+void MainWindow::error(QAbstractSocket::SocketError socketError)
+{
+    Q_UNUSED(socketError)
+    QMessageBox::critical(this, "Error", m_socket.errorString());
+}
