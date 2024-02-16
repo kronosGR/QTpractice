@@ -2,6 +2,11 @@
 #define DIALOG_H
 
 #include <QDialog>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QPixmap>
+#include <QScreen>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,8 +26,12 @@ private slots:
     void on_btnScreen_clicked();
 
     void on_btnSave_clicked();
+    void shoot();
 
 private:
     Ui::Dialog *ui;
+
+    QPixmap m_image;
+    QTimer m_timer;
 };
 #endif // DIALOG_H
