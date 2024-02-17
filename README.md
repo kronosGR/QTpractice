@@ -36,6 +36,10 @@
 
 ![SSCI](screenshotSimpleScreenshot.png)
 
+### 9. Simple Folder Browser - [source](https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-FolderBrowser)
+
+![SFB](screenshotSimpleFolderBrowser.png)
+
 ## Qml [Top](#Qt-Practice)
 
 ### 1. Simple Square meter calculator - [source code](https://github.com/kronosGR/QTpractice/tree/main/QMLsimpleSquareCalculator)
