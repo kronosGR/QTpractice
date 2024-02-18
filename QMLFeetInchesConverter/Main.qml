@@ -7,6 +7,28 @@ Window {
     visible: true
     title: qsTr("Feet Inches Converter")
 
+    function convert() {
+        var value = txtFrom.text
+        var ret = 0
+        switch (cmbType.currentIndex) {
+        case 0:
+            ret = inch_to_feet(value)
+            break
+        case 1:
+            ret = feet_to_inch(value)
+            break
+        }
+        lblResult.text = ret
+    }
+
+    function inch_to_feet(value) {
+        return value / 12
+    }
+
+    function feet_to_inch(value) {
+        return value * 12
+    }
+
     Column {
         id: column
         width: 250
@@ -29,6 +51,15 @@ Window {
 
             ComboBox {
                 id: cmbType
+                model: ListModel {
+                    id: cbItems
+                    ListElement {
+                        text: "Inches to Feet"
+                    }
+                    ListElement {
+                        text: "Feet to Inches"
+                    }
+                }
             }
 
             Label {
@@ -57,6 +88,8 @@ Window {
             id: button
             text: qsTr("Convert")
             anchors.horizontalCenter: parent.horizontalCenter
+
+            onClicked: convert()
         }
     }
 }

@@ -2,7 +2,7 @@
 
 [C++](#C++) | [Qml](#Qml)
 
-## C++ [Top](#Qt-Practice)
+## C++ <sup>[... to top](#Qt-Practice)</sup>
 
 ### 1. Equation Calculator - [source code](https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-Calculator)
 
@@ -44,8 +44,12 @@
 
 ![STD](screenshotSimpleTodo.png)
 
-## Qml [Top](#Qt-Practice)
+## Qml <sup>[... to top](#Qt-Practice)</sup>
 
 ### 1. Simple Square meter calculator - [source code](https://github.com/kronosGR/QTpractice/tree/main/QMLsimpleSquareCalculator)
 
 ![SSC](screenshotSquareCalculator.png)
+
+### 2. Simple Inches to Feet Converter - [source code](https://github.com/kronosGR/QTpractice/tree/main/QMLFeetInchesConverter)
+
+![SITFC](screenshotInchesFeetConverter.png)
