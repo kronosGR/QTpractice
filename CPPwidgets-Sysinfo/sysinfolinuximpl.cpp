@@ -1,7 +1,7 @@
 #include "sysinfolinuximpl.h"
 
 #include <QFile>
-#include <sys/sysinfo.h>
+// #include <sys/sysinfo.h>
 #include <sys/types.h>
 
 SysInfoLinuxImpl::SysInfoLinuxImpl()
@@ -11,59 +11,59 @@ SysInfoLinuxImpl::SysInfoLinuxImpl()
 
 void SysInfoLinuxImpl::init()
 {
-    mCpuLoadLastValues = cpuRawData();
+    // mCpuLoadLastValues = cpuRawData();
 }
 
 double SysInfoLinuxImpl::cpuLoadAverage()
 {
-    QVector<qulonglong> firstSample = mCpuLoadLastValues;
-    QVector<qulonglong> secondSample = cpuRawData();
-    mCpuLoadLastValues = secondSample;
+    // QVector<qulonglong> firstSample = mCpuLoadLastValues;
+    // QVector<qulonglong> secondSample = cpuRawData();
+    // mCpuLoadLastValues = secondSample;
 
-    double overall = (secondSample[0] - firstSample[0]) + (secondSample[1] - firstSample[1])
-                     + (secondSample[2] - firstSample[2]);
-    double total = overall + (secondSample[3] - firstSample[3]);
-    double percent = (overall / total) * 100.0;
-    return qBound(0.0, percent, 100.0);
+    // double overall = (secondSample[0] - firstSample[0]) + (secondSample[1] - firstSample[1])
+    //                  + (secondSample[2] - firstSample[2]);
+    // double total = overall + (secondSample[3] - firstSample[3]);
+    // double percent = (overall / total) * 100.0;
+    // return qBound(0.0, percent, 100.0);
 }
 
 double SysInfoLinuxImpl::memoryUsed()
 {
-    struct SysInfo memInfo;
-    sysInfo(&memInfo);
+    // struct SysInfo memInfo;
+    // sysInfo(&memInfo);
 
-    qulonglong totalMemory = memInfo.totalram;
-    totalMemory += memInfo.totalswap;
-    totalMemory *= memInfo.mem_unit;
+    // qulonglong totalMemory = memInfo.totalram;
+    // totalMemory += memInfo.totalswap;
+    // totalMemory *= memInfo.mem_unit;
 
-    qulonglong totalMemoryUsed = memInfo.totalram - memInfo.freeram;
-    totalMemoryUsed += memInfo.totalswap - memInfo.freeswap;
-    totalMemoryUsed *= memInfo.mem_unit;
+    // qulonglong totalMemoryUsed = memInfo.totalram - memInfo.freeram;
+    // totalMemoryUsed += memInfo.totalswap - memInfo.freeswap;
+    // totalMemoryUsed *= memInfo.mem_unit;
 
-    double percent = (double) totalMemoryUsed / (double) totalMemory * 100.0;
-    return qBound(0.0, percent, 100.0);
+    // double percent = (double) totalMemoryUsed / (double) totalMemory * 100.0;
+    // return qBound(0.0, percent, 100.0);
 }
 
 QVector<qulonglong> SysInfoLinuxImpl::cpuRawData()
 {
-    QFile file("/proc/stat");
-    file.open(QIODevice::ReadOnly);
-    QByteArray line = file.readLine();
-    file.close();
-    qulonglong totalUser = 0, totalUserNice = 0, totalSystem = 0, totalIdle = 0;
+    // QFile file("/proc/stat");
+    // file.open(QIODevice::ReadOnly);
+    // QByteArray line = file.readLine();
+    // file.close();
+    // qulonglong totalUser = 0, totalUserNice = 0, totalSystem = 0, totalIdle = 0;
 
-    std::scanf(line.data(),
-               "cpu %llu %llu %llu %llu",
-               &totalUser,
-               &totalUserNice,
-               &totalSystem,
-               &totalIdle);
+    // std::scanf(line.data(),
+    //            "cpu %llu %llu %llu %llu",
+    //            &totalUser,
+    //            &totalUserNice,
+    //            &totalSystem,
+    //            &totalIdle);
 
-    QVector<qulonglong> rawData;
-    rawData.append(totalUser);
-    rawData.append(totalUserNice);
-    rawData.append(totalSystem);
-    rawData.append(totalIdle);
+    // QVector<qulonglong> rawData;
+    // rawData.append(totalUser);
+    // rawData.append(totalUserNice);
+    // rawData.append(totalSystem);
+    // rawData.append(totalIdle);
 
-    return rawData;
+    // return rawData;
 }
