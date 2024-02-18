@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "task.h"
+
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -17,7 +19,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void addTask();
+
 private:
     Ui::MainWindow *ui;
+
+    QVector<Task *> mTasks;
 };
 #endif // MAINWINDOW_H
