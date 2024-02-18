@@ -40,6 +40,10 @@
 
 ![SFB](screenshotSimpleFolderBrowser.png)
 
+### 10. Simple Todo - [source](https://github.com/kronosGR/QTpractice/tree/main/CPPWidgets-Todo)
+
+![STD](screenshotSimpleTodo.png)
+
 ## Qml [Top](#Qt-Practice)
 
 ### 1. Simple Square meter calculator - [source code](https://github.com/kronosGR/QTpractice/tree/main/QMLsimpleSquareCalculator)
