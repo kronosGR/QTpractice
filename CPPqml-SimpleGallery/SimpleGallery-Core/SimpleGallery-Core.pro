@@ -12,12 +12,16 @@ CONFIG += c++17
 
 SOURCES += \
     album.cpp \
+    albumdao.cpp \
+    databasemanager.cpp \
     picture.cpp \
     simplegallerycore.cpp
 
 HEADERS += \
     SimpleGallery-Core_global.h \
     album.h \
+    albumdao.h \
+    databasemanager.h \
     picture.h \
     simplegallerycore.h
 
