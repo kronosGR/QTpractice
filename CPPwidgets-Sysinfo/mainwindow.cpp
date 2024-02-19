@@ -1,6 +1,7 @@
 #include "mainwindow.h"
-#include <QLayout>
 #include "./ui_mainwindow.h"
+
+#include <QLayout>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -10,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     SysInfo::instance().init();
-    ui->centralwidget->layout()->addWidget(&mCpuWidget);
+    ui->verticalLayout->addWidget(&mCpuWidget);
 }
 
 MainWindow::~MainWindow()
