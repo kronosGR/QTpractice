@@ -48,7 +48,9 @@
 
 ![SSI](screenshotSysInfo.png)
 
-## Qml <sup>[... to top](#Qt-Practice)</sup>
+## Qml
+
+<sup>[... to top](#Qt-Practice)</sup>
 
 ### 1. Simple Square meter calculator - [source code](https://github.com/kronosGR/QTpractice/tree/main/QMLsimpleSquareCalculator)
 
