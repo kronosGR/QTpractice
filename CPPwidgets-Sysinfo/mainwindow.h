@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "cpuwidget.h"
+#include "memorywidget.h"
 #include "sysinfo.h"
 
 QT_BEGIN_NAMESPACE
@@ -22,5 +23,6 @@ public:
 private:
     Ui::MainWindow *ui;
     CpuWidget mCpuWidget;
+    MemoryWidget mMemoryWidget;
 };
 #endif // MAINWINDOW_H

@@ -28,6 +28,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         sysinfolinuximpl.h sysinfolinuximpl.cpp
         sysinfowidget.h sysinfowidget.cpp
         cpuwidget.h cpuwidget.cpp
+        memorywidget.h memorywidget.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET CPPwidgets-Sysinfo APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
