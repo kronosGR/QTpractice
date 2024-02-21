@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>C:/Users/geoel/Downloads/photo-previous.png</file>
+        <file>C:/Users/geoel/Downloads/photo-next.png</file>
+        <file>C:/Users/geoel/Downloads/photo-delete.png</file>
+        <file>C:/Users/geoel/Downloads/photo-add.png</file>
+        <file>C:/Users/geoel/Downloads/back-to-gallery.png</file>
+        <file>C:/Users/geoel/Downloads/album-edit.png</file>
+        <file>C:/Users/geoel/Downloads/album-delete.png</file>
+        <file>C:/Users/geoel/Downloads/album-add.png</file>
+    </qresource>
+</RCC>
