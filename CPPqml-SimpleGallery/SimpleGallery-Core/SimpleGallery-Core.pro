@@ -13,16 +13,22 @@ CONFIG += c++17
 SOURCES += \
     album.cpp \
     albumdao.cpp \
+    albummodel.cpp \
     databasemanager.cpp \
     picture.cpp \
+    picturedao.cpp \
+    picturemodel.cpp \
     simplegallerycore.cpp
 
 HEADERS += \
     SimpleGallery-Core_global.h \
     album.h \
     albumdao.h \
+    albummodel.h \
     databasemanager.h \
     picture.h \
+    picturedao.h \
+    picturemodel.h \
     simplegallerycore.h
 
 # Default rules for deployment.
