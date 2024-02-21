@@ -15,12 +15,12 @@ class SIMPLEGALLERYCORE_EXPORT AlbumModel : public QAbstractListModel
 {
     Q_OBJECT
 
+public:
     enum Roles {
         IdRole = Qt::UserRole + 1,
         NameRole,
     };
 
-public:
     AlbumModel(QObject *parent = nullptr);
     QModelIndex addAlbum(const Album &album);
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;

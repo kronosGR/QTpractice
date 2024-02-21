@@ -1,10 +1,12 @@
 #include "albumwidget.h"
+#include "thumbnailproxymodel.h"
 #include "ui_albumwidget.h"
 
 #include <QFileDialog>
 #include <QInputDialog>
 
 #include "albummodel.h"
+#include "picturedelegate.h"
 #include "picturemodel.h"
 
 AlbumWidget::AlbumWidget(QWidget *parent)
@@ -22,6 +24,7 @@ AlbumWidget::AlbumWidget(QWidget *parent)
     ui->thumbnailListView->setResizeMode(QListView::Adjust);
     ui->thumbnailListView->setFlow(QListView::LeftToRight);
     ui->thumbnailListView->setWrapping(true);
+    ui->thumbnailListView->setItemDelegate(new PictureDelegate(this));
 
     connect(ui->thumbnailListView, &QListView::doubleClicked, this, &AlbumWidget::pictureActivated);
     connect(ui->deleteButton, &QPushButton::clicked, this, &AlbumWidget::deleteAlbum);
