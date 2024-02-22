@@ -37,5 +37,5 @@ void PictureDelegate::paint(QPainter *painter,
 QSize PictureDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     const QPixmap &pixmap = index.model()->data(index, Qt::DecorationRole).value<QPixmap>();
-    return pixmax.size();
+    return pixmap.size();
 }
