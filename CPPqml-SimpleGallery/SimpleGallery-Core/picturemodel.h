@@ -27,7 +27,8 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     QModelIndex addPicture(const Picture &picture);
-    void setAlbumId(int albumId);
+
+    Q_INVOKABLE void setAlbumId(int albumId);
     void clearAlbum();
 
 public slots:

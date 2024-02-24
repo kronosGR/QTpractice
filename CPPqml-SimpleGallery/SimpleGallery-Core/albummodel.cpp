@@ -17,6 +17,11 @@ QModelIndex AlbumModel::addAlbum(const Album &album)
     return index(rowIndex, 0);
 }
 
+void AlbumModel::addAlbumFromName(const QString &name)
+{
+    addAlbum(Album(name));
+}
+
 int AlbumModel::rowCount(const QModelIndex &parent) const
 {
     return mAlbums->size();

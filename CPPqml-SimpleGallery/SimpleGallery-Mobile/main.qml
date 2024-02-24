@@ -1,28 +1,27 @@
 import QtQuick
 import QtQuick.Controls
+import "."
 
 ApplicationWindow {
-    width: 640
-    height: 480
-    visible: true
-    title: qsTr("Hello World")
+    readonly property alias pageStack: stackView
 
-    menuBar: MenuBar {
-        Menu {
-            title: qsTr("File")
-            MenuItem {
-                text: qsTr("&Open")
-                onTriggered: console.log("Open triggered")
-            }
-            MenuItem {
-                text: qsTr("Exit")
-                onTriggered: Qt.quit()
-            }
-        }
+    id: app
+    width: 768
+    height: 1280
+    visible: true
+
+    StackView {
+        id: stackView
+        anchors.fill: parent
+        initialItem: AlbumListPage
     }
 
-    Label {
-        text: qsTr("Hello World")
-        anchors.centerIn: parent
+    onClosing: {
+        if (Qt.platform.os == "andoird") {
+            if (stackView.depth > 1) {
+                close.accepted = false
+                stackView.pop()
+            }
+        }
     }
 }

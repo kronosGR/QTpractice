@@ -3,11 +3,13 @@ TEMPLATE = app
 QT += quick qml sql svg
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        pictureimageprovider.cpp
 
 resources.files = main.qml 
 resources.prefix = /$${TARGET}
-RESOURCES += resources
+RESOURCES += resources \
+    res.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -31,3 +33,16 @@ contains(ANDROID_TARGET_ARCH,x86) {
 ANDROID_EXTRA_LIBS = \
 $$[QT_INSTALL_LIBS]/libQt5Sql.so
 }
+
+DISTFILES += \
+    AlbumListPage.qml \
+    AlbumPage.qml \
+    InputDialog.qml \
+    PageTheme.qml \
+    PicturePage.qml \
+    Style.qml \
+    ToolBarTheme.qml \
+    qmldir
+
+HEADERS += \
+    pictureimageprovider.h

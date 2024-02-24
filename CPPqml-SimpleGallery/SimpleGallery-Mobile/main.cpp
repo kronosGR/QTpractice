@@ -4,6 +4,7 @@
 #include <QQuickView>
 
 #include "albummodel.h"
+#include "pictureimageprovider.h"
 #include "picturemodel.h"
 
 int main(int argc, char *argv[])
@@ -11,14 +12,16 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     AlbumModel albumModel;
-    PictureModel PictureModel(albumModel);
+    PictureModel pictureModel(albumModel);
 
     QQmlApplicationEngine engine;
 
     QQmlContext *context = engine.rootContext();
+    context->setContextProperty("thumbnailSize", PictureImageProvider::THUMBNAIL_SIZE.width());
     context->setContextProperty("albumModel", &albumModel);
-    context->setContextProperty("pictureModel", &PictureModel);
+    context->setContextProperty("pictureModel", &pictureModel);
 
+    engine.addImageProvider("pictures", new PictureImageProvider(&pictureModel));
     const QUrl url(u"qrc:/SimpleGallery-Mobile/main.qml"_qs);
     QObject::connect(
         &engine,
