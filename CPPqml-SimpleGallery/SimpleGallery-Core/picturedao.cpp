@@ -17,7 +17,7 @@ void PictureDao::init() const
 {
     if (!mDatabase.tables().contains("pictures")) {
         QSqlQuery query(mDatabase);
-        query.exec(QString("create table pictures") + " (id integer primary kay autoincrement, "
+        query.exec(QString("create table pictures") + " (id integer primary key autoincrement, "
                    + " album_id integer, url text) ");
         DatabaseManager::debugQuery(query);
     }

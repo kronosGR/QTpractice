@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Controls
-import "."
 
 PageTheme {
     toolbarTitle: "Albums"
@@ -46,7 +45,7 @@ PageTheme {
                 onClicked: {
                     albumList.currentIndex = index
                     pictureModel.setAlbumId(id)
-                    pageStack.push("qrc:/qml/AlbimPage.qml", {
+                    pageStack.push("qrc:/qml/AlbumPage.qml", {
                                        "albumName": name,
                                        "albumRowIndex": index
                                    })

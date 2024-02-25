@@ -45,7 +45,7 @@ PageTheme {
             property int itemIndex: index
             property string itemName: name
 
-            width: ListView.view.width == 0 ? parent.width : ListView.view.width
+            width: ListView.view.width === 0 ? parent.width : ListView.view.width
             height: pictureListView.height
             color: "transparent"
 
@@ -54,8 +54,3 @@ PageTheme {
                 cache: false
                 width: parent.width
                 height: parent.height
-                source: "image://pictures/" + index + "/full"
-            }
-        }
-    }
-}

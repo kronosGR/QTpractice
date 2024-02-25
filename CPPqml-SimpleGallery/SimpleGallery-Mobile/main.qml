@@ -13,11 +13,12 @@ ApplicationWindow {
     StackView {
         id: stackView
         anchors.fill: parent
-        initialItem: AlbumListPage
+
+        initialItem: Qt.resolvedUrl("AlbumListPage.qml")
     }
 
     onClosing: {
-        if (Qt.platform.os == "andoird") {
+        if (Qt.platform.os === "andoird") {
             if (stackView.depth > 1) {
                 close.accepted = false
                 stackView.pop()
