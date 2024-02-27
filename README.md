@@ -59,3 +59,7 @@
 ### 2. Simple Inches to Feet Converter - [source code](https://github.com/kronosGR/QTpractice/tree/main/QMLFeetInchesConverter)
 
 ![SITFC](screenshotInchesFeetConverter.png)
+
+### 3. Simple Dice Roller - [source code](https://github.com/kronosGR/QTpractice/tree/main/QMLDiceRoller)
+
+![SDR](screenshotSimpleDiceRoler.png)
