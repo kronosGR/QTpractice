@@ -63,3 +63,7 @@
 ### 3. Simple Dice Roller - [source code](https://github.com/kronosGR/QTpractice/tree/main/QMLDiceRoller)
 
 ![SDR](screenshotSimpleDiceRoler.png)
+
+### 4. Random Dinner Picker - [source](https://github.com/kronosGR/QTpractice/tree/main/QMLRandomDinner)
+
+![RDP](screenshotDinnerPicker.png)
