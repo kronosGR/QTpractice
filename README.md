@@ -68,6 +68,6 @@
 
 ![RDP](screenshotDinnerPicker.png)
 
-### 5. Simple Gallery - [source](https://github.com/kronosGR/QTpractice/tree/main/CPPqml-SimpleGallery)
+### 5. Simple ImageViewer - [source](https://github.com/kronosGR/QTpractice/tree/main/CPPQML-ImageViewer)
 
 ![SG](screenshotSimpeGallery.png)
