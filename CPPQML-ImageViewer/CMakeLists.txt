@@ -16,6 +16,8 @@ qt_add_qml_module(appCPPQML-ImageViewer
     URI CPPQML-ImageViewer
     VERSION 1.0
     QML_FILES Main.qml
+    SOURCES dirhelper.h dirhelper.cpp
+    QML_FILES ImagePage.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

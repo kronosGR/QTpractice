@@ -67,3 +67,7 @@
 ### 4. Random Dinner Picker - [source](https://github.com/kronosGR/QTpractice/tree/main/QMLRandomDinner)
 
 ![RDP](screenshotDinnerPicker.png)
+
+### 5. Simple Gallery - [source]https://github.com/kronosGR/QTpractice/tree/main/CPPqml-SimpleGallery)
+
+![SG](screenshotSimpeGallery.png)
