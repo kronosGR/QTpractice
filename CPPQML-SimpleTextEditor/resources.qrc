@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/flat">
+        <file>icons/oCopy.png</file>
+        <file>icons/oCut.png</file>
+        <file>icons/oNew.png</file>
+        <file>icons/oOpen.png</file>
+        <file>icons/oPaste.png</file>
+        <file>icons/oSave.png</file>
+    </qresource>
+</RCC>

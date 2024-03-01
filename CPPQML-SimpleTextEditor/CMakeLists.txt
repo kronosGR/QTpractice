@@ -8,6 +8,8 @@ find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup()
 
+set(CMAKE_AUTORCC ON)
+
 qt_add_executable(appCPPQML-SimpleTextEditor
     main.cpp
 )
@@ -16,6 +18,8 @@ qt_add_qml_module(appCPPQML-SimpleTextEditor
     URI CPPQML-SimpleTextEditor
     VERSION 1.0
     QML_FILES Main.qml
+    SOURCES backend.h backend.cpp
+    RESOURCES qml.qrc
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

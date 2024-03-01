@@ -1,9 +1,12 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include "backend.h"
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+
+    qmlRegisterType<Backend>("me.kandz.backend", 1, 0, "Backend");
 
     QQmlApplicationEngine engine;
     const QUrl url(u"qrc:/CPPQML-SimpleTextEditor/Main.qml"_qs);
