@@ -64,10 +64,14 @@
 
 ![SDR](screenshotSimpleDiceRoler.png)
 
-### 4. Random Dinner Picker - [source](https://github.com/kronosGR/QTpractice/tree/main/QMLRandomDinner)
+### 4. Random Dinner Picker - [source code](https://github.com/kronosGR/QTpractice/tree/main/QMLRandomDinner)
 
 ![RDP](screenshotDinnerPicker.png)
 
-### 5. Simple ImageViewer - [source](https://github.com/kronosGR/QTpractice/tree/main/CPPQML-ImageViewer)
+### 5. Simple ImageViewer - [source code](https://github.com/kronosGR/QTpractice/tree/main/CPPQML-ImageViewer)
 
 ![SG](screenshotSimpeGallery.png)
+
+### 6. Simple Text Editor - [source code](https://github.com/kronosGR/QTpractice/tree/main/CPPQML-SimpleTextEditor)
+
+![STE](screenshotSimpleTextEditor.png)

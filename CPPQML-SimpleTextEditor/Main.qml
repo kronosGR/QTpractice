@@ -20,10 +20,9 @@ ApplicationWindow {
     FileDialog {
         id: openDialog
         title: "Please choose a file"
-        currentFolder: shortcuts.home
-
+        nameFilters: ["Text files (*.txt)", "HTML files (*.html *.htm)"]
         onAccepted: {
-            backend.path = openDialog.fileUrl
+            backend.path = openDialog.currentFile
             editor.text = backend.data
         }
     }
@@ -31,10 +30,10 @@ ApplicationWindow {
     FileDialog {
         id: saveDialog
         title: "Please choose a file"
-        currentFolder: shortcuts.home
+        nameFilters: ["Text files (*.txt)", "HTML files (*.html *.htm)"]
 
         onAccepted: {
-            backend.path = openDialog.fileUrl
+            backend.path = saveDialog.currentFile
             backend.data = editor.text
         }
     }
@@ -44,9 +43,6 @@ ApplicationWindow {
         text: qsTr("New")
         icon.color: "transparent"
         icon.source: "qrc:/icons/oNew.png"
-
-        // icon.width: 32
-        // icon.height: 32
         onTriggered: editor.clear()
     }
 
